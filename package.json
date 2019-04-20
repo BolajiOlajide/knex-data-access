@@ -1,0 +1,8 @@
+{
+  "name": "knex-data-access",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "git@github.com:BolajiOlajide/knex-data-access.git",
+  "author": "Bolaji Olajide",
+  "license": "MIT"
+}
