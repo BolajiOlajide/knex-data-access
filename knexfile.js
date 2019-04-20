@@ -1,3 +1,5 @@
+require('dotenv').config();
+
 const sqliteCfg = {
   client: 'sqlite3',
   connection: {
@@ -7,16 +9,18 @@ const sqliteCfg = {
   pool: {
     min: 1,
     max: 1
-  }
+  },
+  debug: true
 };
 
 const pgCfg = {
   client: 'pg',
-  connection: 'postgres://bolaji:andela@localhost/knex-pg-books',
+  connection: process.env.DB_URL,
   pool: {
     min: 1,
     max: 1
-  }
+  },
+  debug: true
 }
 
-module.exports = pgCfg;
+module.exports = { pgCfg, sqliteCfg };
