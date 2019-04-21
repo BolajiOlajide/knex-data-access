@@ -8,8 +8,8 @@ CREATE TABLE author
 	--Fields
 	firstname   VARCHAR(30)  NOT NULL,
 	lastname    VARCHAR(30)  NOT NULL,
-	
-	CONSTRAINT pk_author PRIMARY KEY (id)  --PK               
+
+	CONSTRAINT pk_author PRIMARY KEY (id)  --PK
 );
 
 
@@ -25,7 +25,7 @@ CREATE TABLE book
 
 	--Fields
 	title     VARCHAR(100) NOT NULL,
-    rating    INTEGER      NOT NULL,
+    rating    INTEGER      NOT NULL CHECK (rating <= 10),
 
 	CONSTRAINT pk_book        PRIMARY KEY (id),                             --PK
     CONSTRAINT fk_book_author FOREIGN KEY (author_id) REFERENCES author(id) --FK
@@ -37,15 +37,15 @@ INSERT INTO author (firstname, lastname) VALUES
 	,('George', 'Martin')         --2
 	,('Steven', 'King')           --3
 	,('Mark',   'Twain');         --4
-    
+
 INSERT INTO book (title, author_id, rating) VALUES
      ('Harry Potter and the Philosopher''s Stone', 1,  8)  --1
 	,('Harry Potter and the Chamber of Secrets',   1, 10)  --2
     ,('Harry Potter and the Prisoner of Azkaban',  1,  9)  --3
-   
+
     ,('A Game of Thrones', 2, 10)                          --4
     ,('A Clash of Kings',  2, 9)                           --5
     ,('A Storm of Swords', 2, 7);                          --6
-	
-	
+
+
 UPDATE book SET title = upper(title);
