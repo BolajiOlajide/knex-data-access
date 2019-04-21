@@ -1,10 +1,14 @@
 const Treeize = require('treeize');
 const R = require('ramda');
 
+const knexInstance = require('../app');
+const runQuery = require('./runQuery');
+const { writeToConsole } = require('./screen');
+
 
 // make use of treeize for eager loading
 const eagerLoadQuery = knexInstance('book')
-  .join('author', function() {
+  .join('author', function () {
     this.on('author.id', '=', 'book.author_id')
   })
   .select(
@@ -20,8 +24,10 @@ const eagerLoadQuery = knexInstance('book')
     const authors = tree.getData();
     writeToConsole(authors, 'pretty')
   })
-.catch((err) => console.log(err))
-.finally(() => knexInstance.destroy());
+  .catch((err) => console.log(err))
+  .finally(() => knexInstance.destroy());
+
+runQuery(eagerLoadQuery, 'pretty');
 
 // alternate implementation of eager loading w/o using a 3rd-party library
 const authorRow = knexInstance('author').where('id', 1).debug(false).then();

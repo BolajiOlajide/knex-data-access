@@ -34,7 +34,7 @@ const selectMinQuery = knexInstance('book').min('rating as lowScore');
 //   .finally(() => knexInstance.destroy());
 
 // resolves the query and passess it to the method supplied
-// selectMinQuery.tap(writeToConsole).finally(() => knexInstance.destroy());
+selectMinQuery.debug(false).tap(writeToConsole).finally(() => knexInstance.destroy());
 
 // knexInstance('book').select('author_id').min('rating as lowScore').groupBy('author_id')
 //   .then(rows => writeToConsole(rows, 'pretty')).catch((err) => console.log(err)).finally(() => knexInstance.destroy());
@@ -53,20 +53,9 @@ const selectMinQuery = knexInstance('book').min('rating as lowScore');
 //   .catch((err) => console.log(err))
 //   .finally(() => knexInstance.destroy());
 
+// runQuery(alternateJoinQuery, 'pretty');
 
-// knexInstance('book')
-//   .join('author', 'author.id', '=', 'book.author_id')
-//   .select('author.firstname', 'author.lastname', 'book.title as bookTitle')
-//   .then(rows => writeToConsole(rows, 'pretty'))
-//   .catch((err) => console.log(err))
-//   .finally(() => knexInstance.destroy());
-
-const alternateJoinQuery = knexInstance('book')
-  .join('author', function() {
-    this.on('author.id', '=', 'book.author_id')
-      // .orOn('..') -- for multiple conditions
-  })
-  .where('author.firstname', '<>', 'George')
-  .select('author.firstname', 'author.lastname', 'book.title as bookTitle');
-
-runQuery(alternateJoinQuery, 'pretty');
+const charles = { firstname: 'Charles', lastname: 'Odili' };
+const will = { firstname: 'Williams', lastname: 'Shakespare' };
+const ed = { firstname: 'Edgar', lastname: 'Poe' };
+const doc = { firstname: 'Dr.', lastname: 'Seuss' };
