@@ -214,6 +214,11 @@ class-utils@^0.3.5:
     isobject "^3.0.0"
     static-extend "^0.1.1"
 
+clone-function@>=1.0.1:
+  version "1.0.6"
+  resolved "https://registry.npmjs.org/clone-function/-/clone-function-1.0.6.tgz#428471937750bca9c48ecbfbc16f6e232f74a03d"
+  integrity sha1-QoRxk3dQvKnEjsv7wW9uIy90oD0=
+
 code-point-at@^1.0.0:
   version "1.1.0"
   resolved "https://registry.npmjs.org/code-point-at/-/code-point-at-1.1.0.tgz#0d070b4d043a5bea33a2f1a40e2edb3d9a4ccf77"
@@ -662,6 +667,11 @@ ignore-walk@^3.0.1:
   dependencies:
     minimatch "^3.0.4"
 
+inflection@^1.12.0:
+  version "1.12.0"
+  resolved "https://registry.npmjs.org/inflection/-/inflection-1.12.0.tgz#a200935656d6f5f6bc4dc7502e1aecb703228416"
+  integrity sha1-ogCTVlbW9fa8TcdQLhrstwMihBY=
+
 inflight@^1.0.4:
   version "1.0.6"
   resolved "https://registry.npmjs.org/inflight/-/inflight-1.0.6.tgz#49bd6331d7d02d0c09bc910a1075ba8165b56df9"
@@ -936,7 +946,7 @@ liftoff@3.1.0:
     rechoir "^0.6.2"
     resolve "^1.1.7"
 
-lodash@^4.17.11:
+lodash@^4.17.11, lodash@^4.17.4:
   version "4.17.11"
   resolved "https://registry.npmjs.org/lodash/-/lodash-4.17.11.tgz#b39ea6229ef607ecd89e2c8df12536891cac9b8d"
   integrity sha512-cQKh8igo5QUhZ7lg38DYWAxMvjSAKG0A8wGSVimP07SIUEK2UO+arSRKbRZWtelMtN5V0Hkwh5ryOto/SshYIg==
@@ -1149,6 +1159,19 @@ object-copy@^0.1.0:
     copy-descriptor "^0.1.0"
     define-property "^0.2.5"
     kind-of "^3.0.3"
+
+object-foreach@>=0.1.2:
+  version "0.1.2"
+  resolved "https://registry.npmjs.org/object-foreach/-/object-foreach-0.1.2.tgz#d7421c5b40e3b6a3ef57ac624368d21d8f8d2dec"
+  integrity sha1-10IcW0DjtqPvV6xiQ2jSHY+NLew=
+
+object-merge@^2.5.1:
+  version "2.5.1"
+  resolved "https://registry.npmjs.org/object-merge/-/object-merge-2.5.1.tgz#077e8915ce38ea7294788448c5dd339e34df4227"
+  integrity sha1-B36JFc446nKUeIRIxd0znjTfQic=
+  dependencies:
+    clone-function ">=1.0.1"
+    object-foreach ">=0.1.2"
 
 object-visit@^1.0.0:
   version "1.0.1"
@@ -1368,6 +1391,11 @@ qs@~6.5.2:
   version "6.5.2"
   resolved "https://registry.npmjs.org/qs/-/qs-6.5.2.tgz#cb3ae806e8740444584ef154ce8ee98d403f3e36"
   integrity sha512-N5ZAX4/LxJmF+7wN74pUD6qAh9/wnvdQcjq9TZjevvXzSUo7bfmw91saqMjzGS2xq91/odN2dW/WOl7qQHNDGA==
+
+ramda@^0.26.1:
+  version "0.26.1"
+  resolved "https://registry.npmjs.org/ramda/-/ramda-0.26.1.tgz#8d41351eb8111c55353617fc3bbffad8e4d35d06"
+  integrity sha512-hLWjpy7EnsDBb0p+Z3B7rPi3GDeRG5ZtiI33kJhTt+ORCd38AbAIjB/9zRIUoeTbE/AVX5ZkU7m6bznsvrf8eQ==
 
 rc@^1.2.7:
   version "1.2.8"
@@ -1744,6 +1772,15 @@ tough-cookie@~2.4.3:
   dependencies:
     psl "^1.1.24"
     punycode "^1.4.1"
+
+treeize@^2.1.2:
+  version "2.1.2"
+  resolved "https://registry.npmjs.org/treeize/-/treeize-2.1.2.tgz#344a04116a6ff31f597e0050c9342cb0d1cbe7df"
+  integrity sha512-MpqkknwIO1dW0iZOI+EQi4I+LA+QdJJ5p81L21ckc65TJvZpIIr3G4MwZQr+wg0baswLenxrV8hBtI28gIEkIA==
+  dependencies:
+    inflection "^1.12.0"
+    lodash "^4.17.4"
+    object-merge "^2.5.1"
 
 tunnel-agent@^0.6.0:
   version "0.6.0"
