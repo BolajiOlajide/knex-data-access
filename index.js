@@ -2,6 +2,7 @@ const knexInstance = require('./app');
 
 const { clearConsole, writeToConsole } = require('./utils/screen');
 const runQuery = require('./utils/runQuery');
+const R = require('ramda');
 
 
 clearConsole();
